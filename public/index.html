@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpanishSnap — Learn Spanish</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SCREEN 1: Level Selection -->
+  <div id="screen-level" class="screen active">
+    <div class="container">
+      <h1 class="logo">🇪🇸 SpanishSnap</h1>
+      <p class="subtitle">Learn Spanish, one card at a time!</p>
+      <h2>Choose your level</h2>
+      <div class="level-buttons">
+        <button class="btn btn-level btn-beginner" data-level="beginner">
+          <span class="btn-emoji">🌱</span>
+          <span class="btn-label">Beginner</span>
+          <span class="btn-desc">Everyday basics</span>
+        </button>
+        <button class="btn btn-level btn-intermediate" data-level="intermediate">
+          <span class="btn-emoji">🌿</span>
+          <span class="btn-label">Intermediate</span>
+          <span class="btn-desc">Expand your vocab</span>
+        </button>
+        <button class="btn btn-level btn-advanced" data-level="advanced">
+          <span class="btn-emoji">🌳</span>
+          <span class="btn-label">Advanced</span>
+          <span class="btn-desc">Idioms &amp; complex words</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: Category Selection -->
+  <div id="screen-category" class="screen">
+    <div class="container">
+      <header class="top-bar">
+        <button class="btn btn-back" id="btn-back-level">← Back</button>
+        <h1 class="logo-small">🇪🇸 SpanishSnap</h1>
+        <span class="level-badge" id="level-badge"></span>
+      </header>
+      <h2>Pick a category</h2>
+      <div class="category-buttons">
+        <button class="btn btn-category" data-category="all">
+          <span class="btn-emoji">📚</span> All Words
+        </button>
+        <button class="btn btn-category" data-category="greetings">
+          <span class="btn-emoji">👋</span> Greetings
+        </button>
+        <button class="btn btn-category" data-category="food">
+          <span class="btn-emoji">🍽️</span> Food
+        </button>
+        <button class="btn btn-category" data-category="colors">
+          <span class="btn-emoji">🎨</span> Colors
+        </button>
+        <button class="btn btn-category" data-category="phrases">
+          <span class="btn-emoji">💬</span> Common Phrases
+        </button>
+      </div>
+
+      <!-- Overall progress for this level -->
+      <div class="progress-section">
+        <h3>Your Progress</h3>
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="overall-progress-bar"></div>
+        </div>
+        <p class="progress-text" id="overall-progress-text">0 / 0 learned</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: Flashcard View -->
+  <div id="screen-cards" class="screen">
+    <div class="container">
+      <header class="top-bar">
+        <button class="btn btn-back" id="btn-back-category">← Categories</button>
+        <h1 class="logo-small">🇪🇸 SpanishSnap</h1>
+        <span class="category-badge" id="category-badge"></span>
+      </header>
+
+      <!-- Progress for current category -->
+      <div class="progress-section compact">
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="card-progress-bar"></div>
+        </div>
+        <p class="progress-text" id="card-progress-text">0 / 0 learned</p>
+      </div>
+
+      <!-- Card counter -->
+      <p class="card-counter" id="card-counter">Card 1 of 20</p>
+
+      <!-- The flashcard -->
+      <div class="card-wrapper" id="card-wrapper">
+        <div class="flashcard" id="flashcard">
+          <div class="card-face card-front">
+            <p class="card-lang">English</p>
+            <p class="card-word" id="card-front-word"></p>
+            <p class="card-hint">Tap to flip</p>
+          </div>
+          <div class="card-face card-back">
+            <p class="card-lang">Español</p>
+            <p class="card-word" id="card-back-word"></p>
+            <p class="card-hint">Tap to flip back</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card actions -->
+      <div class="card-actions">
+        <button class="btn btn-action btn-learned" id="btn-learned">
+          ✅ Got it!
+        </button>
+        <button class="btn btn-action btn-next" id="btn-next">
+          Next →
+        </button>
+      </div>
+
+      <!-- Shuffle button -->
+      <button class="btn btn-shuffle" id="btn-shuffle">🔀 Shuffle</button>
+
+      <!-- Completion message -->
+      <div class="completion-message" id="completion-message">
+        <h2>🎉 Amazing!</h2>
+        <p>You've learned all the cards in this set!</p>
+        <button class="btn btn-action btn-next" id="btn-review">Review Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
